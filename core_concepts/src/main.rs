@@ -58,8 +58,12 @@ fn main() {
         }
 
     let three_arr = [3; 4];
-
     println!("{} {}", three_arr[0], three_arr[1]);
     
+    let float = 2.3;
+    let float2: f32 = 3.4;
+
+    println!("{} \n{}", float, float2);
+
     }
     
