@@ -14,7 +14,30 @@ while n > 0 {
     }
     println!("{s}"); // prints Hello people after adding 5 "!" characters
 
-    let mut count = String::from("count");
+    let change = change_length(&mut s);
 
+    let len = calculate_length(&s);
+
+    if len >= 20 {
+        println!("{} is too long" , len);
+    }
+    else{
+    println!("{len}"); // will trigger and print out 18
+    }
 }
 
+
+fn calculate_length(s: &str) -> usize {
+    s.len()
+}
+
+fn change_length(some_string: &mut String){
+    if some_string.len() <= 20{
+    some_string.push_str("!");
+    }
+    else {
+        while some_string.len() >= 21 {
+        some_string.push_str("!");}
+    }
+
+}
