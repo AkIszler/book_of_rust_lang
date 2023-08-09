@@ -1,16 +1,15 @@
 fn main() {
+    let mut s = String::from("hello"); // string representation
 
-let mut s = String::from("hello"); // string representation
+    s.push_str(", people"); // pushing to string representation
 
-s.push_str(", people"); // pushing to string representation
+    println!("{s}");
 
-println!("{s}");
+    let mut n = 5;
 
-let mut n = 5;
-
-while n > 0 {
-    s.push_str("!");
-    n -= 1;
+    while n > 0 {
+        s.push_str("!");
+        n -= 1;
     }
     println!("{s}"); // prints Hello people after adding 5 "!" characters
 
@@ -19,25 +18,29 @@ while n > 0 {
     let len = calculate_length(&s);
 
     if len >= 20 {
-        println!("{} is too long" , len);
+        println!("{} is too long", len);
+    } else {
+        println!("{len}"); // will trigger and print out 18
     }
-    else{
-    println!("{len}"); // will trigger and print out 18
+
+    // testing repo stuff
+    println!("welcome to the repo");
+
+    for i in 0..100 {
+        println!("{}", i);
     }
 }
-
 
 fn calculate_length(s: &str) -> usize {
     s.len()
 }
 
-fn change_length(some_string: &mut String){
-    if some_string.len() <= 20{
-    some_string.push_str("!");
-    }
-    else {
+fn change_length(some_string: &mut String) {
+    if some_string.len() <= 20 {
+        some_string.push_str("!");
+    } else {
         while some_string.len() >= 21 {
-        some_string.push_str("!");}
+            some_string.push_str("!");
+        }
     }
-
 }
